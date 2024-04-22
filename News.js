@@ -5,11 +5,10 @@ async function searchTopic(topic, newsApiKey) {
         loadingSpinner.style.display = 'block';
     }
 
-    const apiUrl = `https://serpapi.com/search.json?engine=google&q=${encodeURIComponent(topic)}&language=en&apiKey=${newsApiKey}`; //By language
+    const apiUrl = `https://serpapi.com/search.json?q=${encodeURIComponent(topic)}&language=en&apiKey=${newsApiKey}`; //By language
     const requestOptions = {
         method: 'GET',
         headers: {
-	     engine: "google",
             'Accept': 'application/json',
             'Cache-Control': 'no-cache',
             'Authorization': newsApiKey // Either of these headers can be used for authentication
