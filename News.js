@@ -8,6 +8,7 @@ async function searchTopic(topic, newsApiKey) {
     const apiUrl = `https://serpapi.com/search.json?q=${encodeURIComponent(topic)}&language=en&apiKey=${newsApiKey}`; //By language
     const requestOptions = {
         method: 'GET',
+	 mode: 'cors', // Add this line to enable CORS
         headers: {
             'Accept': 'application/json',
             'Cache-Control': 'no-cache',
