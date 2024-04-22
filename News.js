@@ -5,7 +5,7 @@ async function searchTopic(topic, newsApiKey) {
         loadingSpinner.style.display = 'block';
     }
 
-    const apiUrl = `https://serpapi.com/search.json?q=${encodeURIComponent(topic)}&language=en&apiKey=${newsApiKey}`; //By language
+    const apiUrl = `https://serpapi.com/search.json?engine=google&q=${encodeURIComponent(topic)}&language=en&apiKey=${newsApiKey}`; //By language
     const requestOptions = {
         method: 'GET',
         headers: {
@@ -49,7 +49,7 @@ if (loadingSpinner) {
 }
 
 document.addEventListener('DOMContentLoaded', async function() {
-    const newsApiKey = '7b921481edf0984cd4518d191e97bd356419a5977fe37dc9fef483664ff8554e'; // Your NewsAPI key
+    const newsApiKey = '2cee9c3194475cca922f88d0ca2244fbbb906cfc9046509f9be9d1d8ed806a5d'; // Your NewsAPI key
 
     // Function to handle click events on news items
     document.querySelectorAll('.news-item').forEach(item => {
