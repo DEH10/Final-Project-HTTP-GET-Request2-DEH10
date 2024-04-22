@@ -5,11 +5,13 @@ async function searchTopic(topic, newsApiKey) {
         loadingSpinner.style.display = 'block';
     }
 
-    const apiUrl = `https://api.worldnewsapi.com/search-news?q=${encodeURIComponent(topic)}&language=en&apiKey=${newsApiKey}`; //By language
+    const apiUrl = `https://serpapi.com/search.json?q=${encodeURIComponent(topic)}&language=en&apiKey=${newsApiKey}`; //By language
     const requestOptions = {
         method: 'GET',
         headers: {
-            'x-api-key': newsApiKey
+            'Accept': 'application/json',
+            'Cache-Control': 'no-cache',
+            'Authorization': newsApiKey // Either of these headers can be used for authentication
         }
     };
 
@@ -47,7 +49,7 @@ if (loadingSpinner) {
 }
 
 document.addEventListener('DOMContentLoaded', async function() {
-    const newsApiKey = 'a92ea4464a8d4a98916fab91f6bad992'; // Your NewsAPI key
+    const newsApiKey = '7b921481edf0984cd4518d191e97bd356419a5977fe37dc9fef483664ff8554e'; // Your NewsAPI key
 
     // Function to handle click events on news items
     document.querySelectorAll('.news-item').forEach(item => {
