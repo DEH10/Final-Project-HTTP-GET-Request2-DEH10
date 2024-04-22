@@ -9,6 +9,7 @@ async function searchTopic(topic, newsApiKey) {
     const requestOptions = {
         method: 'GET',
         headers: {
+	     engine: "google",
             'Accept': 'application/json',
             'Cache-Control': 'no-cache',
             'Authorization': newsApiKey // Either of these headers can be used for authentication
